@@ -1,0 +1,3 @@
+JWT_SECRET = 'xxW844Zrv83SVBmhkPK2GOVf1eWMesQk9pSwQK50ku7IPZL0NPQSRkHv8tiNGN8cov8yMMWqF5aMeG41dt1WqVfzpAnUJ3X5zGQyW0cIFfdWOOMEkCgTMO96k12OIisPtq6aS73qz7Ubd6OfWgZeZu7xGafkfK1g3tW'
+AZURE_FN = 'https://cloudcw1.azurewebsites.net'
+AZURE_FN_DEV = 'http://localhost:7071/api/'

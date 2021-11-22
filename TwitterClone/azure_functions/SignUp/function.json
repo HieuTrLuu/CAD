@@ -1,0 +1,46 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "authDB",
+      "databaseName": "SNS",
+      "collectionName": "auth",
+      "sqlQuery": "SELECT * from SNS t where t.email={EMAIL}",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "authDBout",
+      "databaseName": "SNS",
+      "collectionName": "auth",
+      "sqlQuery": "SELECT * from SNS t where t.email={EMAIL}",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "detailDBout",
+      "databaseName": "SNS",
+      "collectionName": "users",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    }
+    
+  ]
+}

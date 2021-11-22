@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },    
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databaseName": "SNS",
+      "collectionName": "users",
+      "sqlQuery": "SELECT * from SNS t where t.id={ID}",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    }
+  ]
+}

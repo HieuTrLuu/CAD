@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "name": "myBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "avatar/{name}",
+      "connection": "MyStorageAccountAppSetting"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databaseName": "SNS",
+      "collectionName": "users",
+      "sqlQuery": "SELECT * from SNS t where t.userName={name}",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "SNS",
+      "collectionName": "users",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    }
+  ]
+}

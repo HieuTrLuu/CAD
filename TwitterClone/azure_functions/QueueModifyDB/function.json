@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "type": "queueTrigger",
+      "direction": "in",
+      "name": "myQueueItem",
+      "queueName": "queue",
+      "connection": "MyStorageAccountAppSetting"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "db",
+      "direction": "out",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "AzureCosmosDBConnectionString",
+      "databaseName": "SNS",
+      "collectionName": "users",
+      "createLeaseCollectionIfNotExists": "true"
+    }
+  ]
+}
